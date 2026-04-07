@@ -1,16 +1,48 @@
-# React + Vite
+# Mangesh Jha - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, modern, and highly-responsive personal portfolio designed to showcase my journey as a **Frontend Developer** and **AI Learner**. Built from scratch using modern web technologies, this portfolio emphasizes performance, a minimalist aesthetic, and clean code architecture.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+[Deployed automatically via Vercel / GitHub Pages]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
 
-## React Compiler
+*   **Framework**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+*   **Styling**: Vanilla CSS (Responsive, Mobile-First, Custom Variables)
+*   **Routing**: React Router DOM (v6)
+*   **Hosting/Deployment**: Vercel
+*   **Version Control**: Git & GitHub
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Key Features & Sections
 
-## Expanding the ESLint configuration
+*   **Home**: Introduction, professional title typed dynamically, and prominent GitHub/LinkedIn connections.
+*   **Experience**: A detailed timeline of professional tenure at Yotta Infrastructures, highlighting progression from Graduate Trainee to Senior Software Developer.
+*   **Projects**: A grid-layout showcase of my work, categorized and featured with high-fidelity screenshots. Highlights include:
+    *   *ExamGenie AI* (Google Gemini-powered tool)
+    *   *OneYotta Portal* (Customer-facing SaaS)
+    *   *Spillo Exim* (Client export website)
+*   **Tools (Shovels)**: A curated list of my daily drivers, from IDEs (VS Code) to cloud platforms (Vercel, Firebase) and AI tools (Google AI Studio, Antigravity).
+*   **Contact**: A fully built, responsive contact form for networking and inquiries.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💻 Running Locally
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/man101jha/Mangesh-Jha.git
+    ```
+2.  **Navigate to directory**:
+    ```bash
+    cd Porfolio-AI-2026
+    ```
+3.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+4.  **Start Development Server**:
+    ```bash
+    npm run dev
+    ```
+
+## 🤝 Connect
+- **LinkedIn**: [linkedin.com/in/mangesh-jha](https://www.linkedin.com/in/mangesh-jha)
+- **GitHub**: [github.com/mangesh105jha](https://github.com/mangesh105jha)
