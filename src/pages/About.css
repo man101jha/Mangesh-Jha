@@ -1,0 +1,52 @@
+.about-section {
+  margin-bottom: 52px;
+}
+
+.about-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 580px;
+}
+
+.about-text p {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ─── Skills Grid ────────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-category {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}

@@ -1,0 +1,106 @@
+.tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.tools-header {
+  margin-bottom: 60px;
+}
+
+.tools-main-title {
+  font-size: clamp(48px, 8vw, 84px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.tools-main-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ─── Shovels Grid ───────────────────────────────────────────── */
+.shovels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 340px));
+  gap: 24px;
+  justify-content: center;
+}
+
+/* ─── Shovel Card ────────────────────────────────────────────── */
+.shovel-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+
+.shovel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.shovel-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  background: white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.shovel-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.shovel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.shovel-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.shovel-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .shovels-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .tools-main-title {
+    font-size: 56px;
+  }
+}

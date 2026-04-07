@@ -1,0 +1,233 @@
+/* ─── Sidebar ────────────────────────────────────────────────── */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  gap: 28px;
+  overflow-y: auto;
+  z-index: 50;
+  transition: transform 0.25s ease;
+}
+
+/* ─── Profile ────────────────────────────────────────────────── */
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0 8px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.sidebar-tagline {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--text-muted);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ─── Nav ────────────────────────────────────────────────────── */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: background var(--transition), color var(--transition);
+  text-decoration: none !important;
+}
+
+.sidebar-nav-link:hover {
+  background: rgba(0,0,0,0.05);
+  color: var(--text-primary);
+}
+
+.sidebar-nav-link--active {
+  background: var(--accent-black);
+  color: #ffffff !important;
+}
+
+.sidebar-nav-link--active:hover {
+  background: var(--accent-black);
+}
+
+.nav-icon {
+  width: 18px;
+  text-align: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ─── Social ─────────────────────────────────────────────────── */
+.sidebar-social {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-social-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 4px 12px 8px;
+}
+
+.sidebar-social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none !important;
+  transition: background var(--transition), color var(--transition);
+}
+
+.sidebar-social-link:hover {
+  background: rgba(0,0,0,0.05);
+  color: var(--text-primary);
+}
+
+.social-icon {
+  width: 18px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.external-icon {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ─── Mobile Header ──────────────────────────────────────────── */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 60;
+}
+
+.mobile-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.brand-name { font-weight: 600; font-size: 14px; }
+.brand-tagline { font-size: 11px; color: var(--text-secondary); }
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 45;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .mobile-header { display: flex; }
+  .mobile-overlay { display: block; }
+
+  .sidebar {
+    transform: translateX(-100%);
+    top: 0;
+    z-index: 55;
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+}
