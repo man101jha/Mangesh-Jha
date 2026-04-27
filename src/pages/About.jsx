@@ -2,10 +2,11 @@ import React from 'react';
 import './About.css';
 
 const skills = [
-  { category: 'Frontend', items: ['Angular (v17)', 'TypeScript', 'RxJS', 'NgRx', 'SCSS', 'Angular Material'] },
-  { category: 'AI Learning', items: ['LLMs', 'LangChain.js', 'Google Gemini', 'OpenAI API', 'Prompt Engineering'] },
-  { category: 'Tools & Security', items: ['Git', 'Keycloak', 'Azure AD', 'VS Code', 'Bugzilla'] },
-  { category: 'Testing & Core', items: ['Jasmine', 'Karma', 'JavaScript (ES6+)', 'HTML5', 'CSS3'] },
+  { category: 'Frontend', items: ['Next.js', 'React', 'Angular (v17)', 'TypeScript', 'RxJS', 'NgRx', 'SCSS'] },
+  { category: 'Mobile', items: ['Flutter', 'Dart', 'Android & iOS Development'] },
+  { category: 'Backend', items: ['FastAPI', 'Python', 'Node.js'] },
+  { category: 'AI', items: ['CrewAI', 'Ollama', 'Groq API', 'LLMs', 'Google Gemini', 'Prompt Engineering'] },
+  { category: 'Tools', items: ['Git', 'Keycloak', 'Vercel', 'Firebase', 'VS Code', 'Azure AD'] },
 ];
 
 export default function About() {
@@ -13,24 +14,26 @@ export default function About() {
     <div className="page-content about">
       <h1 className="page-title">About Me</h1>
       <p className="page-subtitle">
-        A little more about who I am, what I do, and what drives me.
+        I build high-performance web & mobile applications with a focus on AI integration.
       </p>
 
       <section className="about-section">
         <h2 className="about-section-title">Who I Am</h2>
         <div className="about-text">
           <p>
-            I'm a full-stack AI engineer who loves turning ambitious ideas into
-            real products — fast. I've been building on the web for 5+ years and
-            have shipped everything from solo side-projects to VC-backed startups.
+            I'm a <strong>Frontend & Flutter Developer</strong> at <strong>Yotta Infrastructures</strong>, 
+            where I've been building scalable enterprise platforms since 2023. My expertise lies in 
+            bridging the gap between complex backend systems and intuitive, modern user interfaces.
           </p>
           <p>
-            My sweet spot is the intersection of AI and great UX. I care deeply
-            about how things feel to use, not just how they work under the hood.
+            My recent focus has been on <strong>AI-powered products</strong>. I've developed platforms like 
+            <em> JobPilot AI</em> and <em>ExamGenie AI</em>, which leverage multi-agent orchestration 
+            and large language models to solve real-world problems.
           </p>
           <p>
-            When I'm not at the keyboard, I'm reading about new AI research,
-            hiking, or experimenting in the kitchen.
+            I believe in the power of "shipping fast and iterating." Whether it's a web portal for 
+            thousands of enterprise users or a mobile app for on-the-go management, I strive for 
+            performance, security, and a premium user experience.
           </p>
         </div>
       </section>
@@ -55,15 +58,20 @@ export default function About() {
         <h2 className="about-section-title">What I Believe</h2>
         <div className="about-text">
           <p>
-            Speed matters. I'd rather ship a focused MVP in 2 weeks and learn
-            from real users than spend months polishing something no one wants.
+            <strong>User-First Design:</strong> Great software is invisible. Users shouldn't notice the 
+            interface; they should just accomplish their goals effortlessly.
           </p>
           <p>
-            Great software is invisible. When something is truly well-designed,
-            users don't notice the interface — they just accomplish their goal.
+            <strong>Scalability & Security:</strong> Working in the infrastructure space has taught me 
+            the importance of building systems that are robust, secure, and ready to grow.
+          </p>
+          <p>
+            <strong>Continuous Learning:</strong> The tech landscape—especially AI—is moving fast. 
+            I'm committed to staying at the forefront of these changes to build better products.
           </p>
         </div>
       </section>
     </div>
   );
 }
+

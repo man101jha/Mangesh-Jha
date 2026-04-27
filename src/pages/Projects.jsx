@@ -6,8 +6,23 @@ import examgenieImg from '../assets/examgenie.png';
 import oneyottaImg from '../assets/oneyottadashboard.png';
 import myportalImg from '../assets/myportalDashboard.png';
 import spilloImg from '../assets/spillo-exim.png';
+import jobpilotImg from '../assets/jobpilot.png';
+import oneyottaAppImg from '../assets/oneyottaapp.png';
 
 const allProjects = [
+  {
+    id: 5,
+    title: 'JobPilot AI',
+    subtitle: 'AI Job Application Assistant',
+    description:
+      'An AI-powered job application assistant orchestrated with CrewAI. Built using local Ollama models for development and Groq API for high-speed production inference.',
+    image: jobpilotImg,
+    status: 'active',
+    visitUrl: 'https://jobpilot-ai-rho.vercel.app/',
+    githubUrl: 'https://github.com/man101jha/jobpilot-AI',
+    tags: ['Next.js', 'FastAPI', 'CrewAI', 'Ollama', 'Groq API'],
+    category: 'AI & Personal',
+  },
   {
     id: 1,
     title: 'ExamGenie AI',
@@ -19,7 +34,7 @@ const allProjects = [
     visitUrl: 'https://examgenie-ai.vercel.app/upload',
     githubUrl: 'https://github.com/man101jha/examgenie-ai',
     tags: ['Angular', 'AI/LLM', 'Google Gemini', 'TypeScript'],
-    category: 'AI',
+    category: 'AI & Personal',
   },
   {
     id: 2,
@@ -32,7 +47,22 @@ const allProjects = [
     visitUrl: 'https://account.yotta.com/',
     githubUrl: null,
     tags: ['Angular', 'TypeScript', 'NgRx', 'Keycloak'],
-    category: 'Professional',
+    category: 'Work',
+  },
+  {
+    id: 6,
+    title: 'OneYotta App',
+    subtitle: 'Mobile Application | Yotta Infrastructures',
+    description:
+      'A comprehensive Flutter application for OneYotta portal, providing data center management and monitoring on the go for Android and iOS.',
+    image: oneyottaAppImg,
+    status: 'active',
+    visitUrl: 'https://play.google.com/store/apps/details?id=com.oneyotta&referrer=utm_source%3Dappbrain%26utm_medium%3Dappbrain_web%26utm_campaign%3Dappbrain_web',
+    visitLabel: 'Play Store',
+    githubUrl: 'https://apps.apple.com/in/app/oneyotta/id6758011343',
+    githubLabel: 'App Store',
+    tags: ['Flutter', 'Dart', 'Mobile Development', 'Android', 'iOS'],
+    category: 'Work',
   },
   {
     id: 3,
@@ -45,7 +75,7 @@ const allProjects = [
     visitUrl: 'https://myportal.yotta.com/',
     githubUrl: null,
     tags: ['Angular', 'RxJS', 'D3.js', 'Bootstrap'],
-    category: 'Professional',
+    category: 'Work',
   },
   {
     id: 4,
@@ -104,7 +134,7 @@ function ProjectCard({ project }) {
               rel="noopener noreferrer"
               className="project-btn project-btn--primary"
             >
-              Visit
+              {project.visitLabel || 'Visit'}
             </a>
           )}
           {project.githubUrl && (
@@ -114,7 +144,7 @@ function ProjectCard({ project }) {
               rel="noopener noreferrer"
               className="project-btn project-btn--outline"
             >
-              GitHub
+              {project.githubLabel || 'GitHub'}
             </a>
           )}
 
@@ -138,14 +168,35 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState('All');
+  
+  const categories = ['All', 'AI & Personal', 'Work', 'Client'];
+
+  const filteredProjects = activeCategory === 'All' 
+    ? allProjects 
+    : allProjects.filter(p => p.category === activeCategory);
+
   return (
     <div className="page-content projects">
       <h1 className="page-title">Projects</h1>
       <p className="page-subtitle">Playground — Small MVPs to Production Apps</p>
 
+      {/* Category Tabs */}
+      <div className="category-tabs">
+        {categories.map(cat => (
+          <button 
+            key={cat} 
+            className={`category-tab ${activeCategory === cat ? 'active' : ''}`}
+            onClick={() => setActiveCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
       {/* Grid */}
       <div className="projects-grid">
-        {allProjects.map(project => (
+        {filteredProjects.map(project => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>

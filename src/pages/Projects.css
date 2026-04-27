@@ -1,3 +1,33 @@
+/* ─── Tabs ───────────────────────────────────────────────────── */
+.category-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.category-tab {
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.category-tab:hover {
+  border-color: var(--text-muted);
+}
+
+.category-tab.active {
+  background: var(--accent-black);
+  color: #fff;
+  border-color: var(--accent-black);
+}
+
 /* ─── Grid ───────────────────────────────────────────────────── */
 .projects-grid {
   display: grid;

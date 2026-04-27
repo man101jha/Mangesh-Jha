@@ -6,7 +6,6 @@ const navLinks = [
   { to: '/', label: 'Home', icon: '⌂' },
   { to: '/experience', label: 'Experience', icon: '◈' },
   { to: '/projects', label: 'Projects', icon: '◎' },
-  { to: '/blogs', label: 'Blogs', icon: '✎' },
   { to: '/about', label: 'About', icon: '◯' },
   { to: '/contact', label: 'Contact', icon: '✉' },
   { to: '/tools', label: 'Tools', icon: '⚙' },
@@ -17,7 +16,7 @@ const socialLinks = [
   { href: 'https://github.com/mangesh105jha', label: 'Github', icon: '©' },
 ];
 
-const typewriterWords = ['Frontend Developer', 'Angular Expert', 'AI Learner', 'Problem Solver'];
+const typewriterWords = ['Frontend Developer', 'Flutter Developer', 'AI Learner', 'Problem Solver'];
 
 export default function Sidebar() {
   const [wordIndex, setWordIndex] = useState(0);

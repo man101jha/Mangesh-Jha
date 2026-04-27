@@ -3,6 +3,8 @@ import './Tools.css';
 
 import keycloakImg from '../assets/keycloak.png';
 import antigravityImg from '../assets/antigravity.png';
+import flutterImg from '../assets/flutter.png';
+import fastapiImg from '../assets/FastAPI.png';
 
 const tools = [
   { name: 'VS Code', desc: 'Code Editor', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg' },
@@ -13,6 +15,9 @@ const tools = [
   { name: 'Vercel', desc: 'Deployment', icon: 'https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg' },
   { name: 'AI Studio', desc: 'Google AI', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png' },
   { name: 'Firebase', desc: 'Backend Service', icon: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg' },
+  { name: 'Flutter', desc: 'Mobile Dev', icon: flutterImg },
+  { name: 'Next.js', desc: 'React Framework', icon: 'https://cdn.worldvectorlogo.com/logos/next-js.svg' },
+  { name: 'FastAPI', desc: 'Python Framework', icon: fastapiImg },
 ];
 
 export default function Tools() {

@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className="hero-role">
-          Frontend Developer · AI Learner
+          Frontend Developer · Flutter Developer · AI Learner
           <span className="role-arrow">▶</span>
         </p>
 
@@ -46,7 +46,7 @@ export default function Home() {
         </p>
 
         <p className="bio-body">
-          Currently working as a <strong>Frontend Developer</strong> at{' '}
+          Currently working as a <strong>Frontend & Flutter Developer</strong> at{' '}
           <a
             href="https://yotta.com"
             target="_blank"
@@ -55,13 +55,13 @@ export default function Home() {
           >
             Yotta Infrastructures
           </a>
-          . I have been building scalable enterprise platforms since 2023, 
-          including major projects like{' '}
+          . I build scalable enterprise web platforms and high-performance mobile applications, 
+          including projects like{' '}
           <a href="https://examgenie-ai.vercel.app/upload" target="_blank" rel="noopener noreferrer" className="bio-link">
             ExamGenie AI
           </a>,{' '}
           <a href="/projects" className="bio-link">
-            OneYotta
+            OneYotta Portal & App
           </a>{' '}
           and{' '}
           <a href="/projects" className="bio-link">
@@ -90,22 +90,7 @@ export default function Home() {
         <a href="mailto:you@example.com" className="cta-btn cta-btn--outline">✉ E-Mail</a>
       </div>
 
-      {/* ── Latest Blog Card ─────────────────────── */}
-      <section className="featured-blog">
-        <p className="featured-label">Check this out</p>
-        <a href="/blogs" className="featured-blog-card">
-          <div>
-            <div className="featured-blog-title">
-              Building AI Products That Actually Ship
-            </div>
-            <div className="featured-blog-desc">
-              Practical notes on going from idea to production — how I approach
-              scope, speed, and quality without burning out.
-            </div>
-          </div>
-          <span className="featured-blog-cta">Read more →</span>
-        </a>
-      </section>
+
 
       {/* ── Reach Out ────────────────────────────── */}
       <div className="reach-out">
