@@ -1,85 +1,47 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { blogPosts } from './BlogPost';
 import './Blogs.css';
-
-const blogs = [
-  {
-    id: 1,
-    title: 'Building AI Products That Actually Ship',
-    excerpt:
-      'Practical notes on going from idea to production — how I approach scope, speed, and quality without burning out.',
-    date: 'Mar 2025',
-    readTime: '5 min read',
-    tags: ['AI', 'Product'],
-    url: '#',
-  },
-  {
-    id: 2,
-    title: 'Why Most AI Demos Never Become Products',
-    excerpt:
-      'The gap between a cool demo and a usable product is huge. Here\'s what I\'ve learned after building both.',
-    date: 'Feb 2025',
-    readTime: '7 min read',
-    tags: ['AI', 'Engineering'],
-    url: '#',
-  },
-  {
-    id: 3,
-    title: 'The Art of Scope Minimization',
-    excerpt:
-      'The best feature you can build is sometimes the one you decide not to build. A practical framework for saying no.',
-    date: 'Jan 2025',
-    readTime: '4 min read',
-    tags: ['Product', 'Startups'],
-    url: '#',
-  },
-  {
-    id: 4,
-    title: 'LLMs as Thinking Partners, Not Answer Machines',
-    excerpt:
-      'How I changed from using AI to get answers to using AI to stress-test my thinking — and why it made me better.',
-    date: 'Dec 2024',
-    readTime: '6 min read',
-    tags: ['AI', 'Productivity'],
-    url: '#',
-  },
-  {
-    id: 5,
-    title: 'Lessons from Raising Pre-Seed Funding',
-    excerpt:
-      'Everything I wish I had known about angel rounds, pitch decks, and the emotional rollercoaster of fundraising.',
-    date: 'Nov 2024',
-    readTime: '9 min read',
-    tags: ['Startups', 'Funding'],
-    url: '#',
-  },
-];
 
 export default function Blogs() {
   return (
     <div className="page-content blogs">
-      <h1 className="page-title">Blogs</h1>
-      <p className="page-subtitle">
-        Notes on AI engineering, product building, and lessons from the trenches.
-      </p>
-
-      <div className="blogs-list">
-        {blogs.map(blog => (
-          <a key={blog.id} href={blog.url} className="blog-item">
-            <div className="blog-item-meta">
-              <span className="blog-date">{blog.date}</span>
-              <span className="blog-separator">·</span>
-              <span className="blog-read-time">{blog.readTime}</span>
-            </div>
-            <h2 className="blog-title">{blog.title}</h2>
-            <p className="blog-excerpt">{blog.excerpt}</p>
-            <div className="blog-tags">
-              {blog.tags.map(tag => (
-                <span key={tag} className="tag">{tag}</span>
-              ))}
-            </div>
-          </a>
-        ))}
+      <div className="blogs-header">
+        <h1 className="page-title">Blog</h1>
+        <p className="page-subtitle">
+          Deep dives on AI engineering, roadmaps, and lessons from building in the trenches.
+        </p>
       </div>
+
+      {/* ── Featured post ── */}
+      <div className="blogs-featured-label">✦ FEATURED</div>
+      <Link to={`/blogs/${blogPosts[0].id}`} className="blogs-featured-card">
+        <div className="blogs-featured-image-wrap">
+          <img
+            src={blogPosts[0].heroImage}
+            alt={blogPosts[0].title}
+            className="blogs-featured-image"
+          />
+          <div className="blogs-featured-image-overlay" />
+        </div>
+        <div className="blogs-featured-content">
+          <div className="blogs-featured-meta">
+            <span className="blog-date">{blogPosts[0].date}</span>
+            <span className="blog-separator">·</span>
+            <span className="blog-read-time">{blogPosts[0].readTime}</span>
+          </div>
+          <h2 className="blogs-featured-title">{blogPosts[0].title}</h2>
+          <p className="blogs-featured-excerpt">{blogPosts[0].excerpt}</p>
+          <div className="blog-tags">
+            {blogPosts[0].tags.map(tag => (
+              <span key={tag} className="tag">{tag}</span>
+            ))}
+          </div>
+          <div className="blogs-featured-cta">Read article →</div>
+        </div>
+      </Link>
+
+
     </div>
   );
 }

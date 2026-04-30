@@ -6,6 +6,7 @@ const navLinks = [
   { to: '/', label: 'Home', icon: '⌂' },
   { to: '/experience', label: 'Experience', icon: '◈' },
   { to: '/projects', label: 'Projects', icon: '◎' },
+  { to: '/blogs', label: 'Blog', icon: '✦' },
   { to: '/about', label: 'About', icon: '◯' },
   { to: '/contact', label: 'Contact', icon: '✉' },
   { to: '/tools', label: 'Tools', icon: '⚙' },
