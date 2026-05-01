@@ -4,6 +4,9 @@ import { blogPosts } from './BlogPost';
 import './Blogs.css';
 
 export default function Blogs() {
+  const featured = blogPosts[0];          // newest = prompt engineering
+  const rest = blogPosts.slice(1);        // roadmap
+
   return (
     <div className="page-content blogs">
       <div className="blogs-header">
@@ -15,25 +18,25 @@ export default function Blogs() {
 
       {/* ── Featured post ── */}
       <div className="blogs-featured-label">✦ FEATURED</div>
-      <Link to={`/blogs/${blogPosts[0].id}`} className="blogs-featured-card">
+      <Link to={`/blogs/${featured.id}`} className="blogs-featured-card">
         <div className="blogs-featured-image-wrap">
           <img
-            src={blogPosts[0].heroImage}
-            alt={blogPosts[0].title}
+            src={featured.heroImage}
+            alt={featured.title}
             className="blogs-featured-image"
           />
           <div className="blogs-featured-image-overlay" />
         </div>
         <div className="blogs-featured-content">
           <div className="blogs-featured-meta">
-            <span className="blog-date">{blogPosts[0].date}</span>
+            <span className="blog-date">{featured.date}</span>
             <span className="blog-separator">·</span>
-            <span className="blog-read-time">{blogPosts[0].readTime}</span>
+            <span className="blog-read-time">{featured.readTime}</span>
           </div>
-          <h2 className="blogs-featured-title">{blogPosts[0].title}</h2>
-          <p className="blogs-featured-excerpt">{blogPosts[0].excerpt}</p>
+          <h2 className="blogs-featured-title">{featured.title}</h2>
+          <p className="blogs-featured-excerpt">{featured.excerpt}</p>
           <div className="blog-tags">
-            {blogPosts[0].tags.map(tag => (
+            {featured.tags.map(tag => (
               <span key={tag} className="tag">{tag}</span>
             ))}
           </div>
@@ -41,7 +44,30 @@ export default function Blogs() {
         </div>
       </Link>
 
-
+      {/* ── More articles ── */}
+      {rest.length > 0 && (
+        <>
+          <div className="blogs-section-label" style={{ marginTop: '8px' }}>MORE ARTICLES</div>
+          <div className="blogs-list">
+            {rest.map(post => (
+              <Link key={post.id} to={`/blogs/${post.id}`} className="blog-item">
+                <div className="blog-item-meta">
+                  <span className="blog-date">{post.date}</span>
+                  <span className="blog-separator">·</span>
+                  <span className="blog-read-time">{post.readTime}</span>
+                </div>
+                <div className="blog-title">{post.title}</div>
+                <p className="blog-excerpt">{post.excerpt}</p>
+                <div className="blog-tags">
+                  {post.tags.map(tag => (
+                    <span key={tag} className="tag">{tag}</span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
