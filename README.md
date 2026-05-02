@@ -45,4 +45,4 @@ A sleek, modern, and highly-responsive personal portfolio designed to showcase m
 
 ## 🤝 Connect
 - **LinkedIn**: [linkedin.com/in/mangesh-jha](https://www.linkedin.com/in/mangesh-jha)
-- **GitHub**: [github.com/mangesh105jha](https://github.com/mangesh105jha)
+- **GitHub**: [github.com/man101jha](https://github.com/man101jha)

@@ -14,7 +14,7 @@ const navLinks = [
 
 const socialLinks = [
   { href: 'https://www.linkedin.com/in/mangesh-jha', label: 'LinkedIn', icon: 'in' },
-  { href: 'https://github.com/mangesh105jha', label: 'Github', icon: '©' },
+  { href: 'https://github.com/man101jha', label: 'Github', icon: '©' },
 ];
 
 const typewriterWords = ['Frontend Developer', 'Flutter Developer', 'AI Learner', 'Problem Solver'];

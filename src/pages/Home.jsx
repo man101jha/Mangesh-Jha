@@ -87,7 +87,7 @@ export default function Home() {
       {/* ── Contact + Email buttons ──────────────── */}
       <div className="cta-row">
         <a href="/contact" className="cta-btn cta-btn--primary">Contact</a>
-        <a href="mailto:you@example.com" className="cta-btn cta-btn--outline">✉ E-Mail</a>
+        <a href="mailto:mangesh105jha@gmail.com" className="cta-btn cta-btn--outline">✉ E-Mail</a>
       </div>
 
 

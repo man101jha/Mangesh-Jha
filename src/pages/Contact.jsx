@@ -53,12 +53,12 @@ export default function Contact() {
           <div className="contact-link-group">
             <div className="contact-link-label">GitHub</div>
             <a
-              href="https://github.com/mangesh105jha"
+              href="https://github.com/man101jha"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
             >
-              github.com/mangesh105jha ↗
+              github.com/man101jha ↗
             </a>
           </div>
         </div>
