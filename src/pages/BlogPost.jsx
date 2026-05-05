@@ -5,6 +5,17 @@ import './BlogPost.css';
 /* ─── Blog content data ─────────────────────────────────────── */
 export const blogPosts = [
   {
+    id: 'decoding-transformers',
+    title: '🤖 "Attention Is All You Need" — Decoding the Transformer Revolution',
+    excerpt:
+      'Before 2017, NLP was slow and forgetful. Then came Transformers. Learn how self-attention, embeddings, and parallel processing changed AI forever — with simple analogies and PyTorch code.',
+    date: 'May 5, 2026',
+    readTime: '12 min read',
+    tags: ['Transformers', 'LLM', 'AI', 'Deep Learning', 'Neural Networks'],
+    heroImage: '/blog_transformer_hero_art.png',
+    content: 'transformers',
+  },
+  {
     id: 'prompt-engineering-masterclass',
     title: '🧠 Stop Talking to AI Like It\'s Google — Master Prompt Engineering',
     excerpt:
@@ -950,6 +961,319 @@ function GenAIRoadmapContent() {
   );
 }
 
+/* ─── Transformers blog content ─────────────────────────────── */
+function TransformersContent() {
+  return (
+    <article className="bp-article">
+      {/* ── Hero ── */}
+      <div className="bp-hero-image-wrap">
+        <img
+          src="/blog_transformer_hero_art.png"
+          alt="Transformers Architecture"
+          className="bp-hero-image"
+          onError={e => { e.target.style.background = 'linear-gradient(135deg,#0f172a,#334155)'; }}
+        />
+        <div className="bp-hero-overlay">
+          <div className="bp-hero-badge">🤖 DEEP LEARNING</div>
+          <h1 className="bp-hero-title">Attention Is All You Need</h1>
+          <p className="bp-hero-sub">Decoding the Transformer Revolution — From RNNs to GPT-4</p>
+        </div>
+      </div>
+
+      {/* ── Meta ── */}
+      <div className="bp-meta-bar">
+        <div className="bp-meta-left">
+          <div className="bp-avatar">MJ</div>
+          <div>
+            <div className="bp-author">Mangesh Jha</div>
+            <div className="bp-meta-info">May 5, 2026 · 12 min read</div>
+          </div>
+        </div>
+        <div className="bp-tags">
+          {['Transformers', 'LLM', 'AI', 'Deep Learning', 'Neural Networks'].map(t => (
+            <span key={t} className="tag">{t}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Intro ── */}
+      <div className="bp-prose">
+        <p>
+          <strong>A single paper. Eight authors. 2017.</strong> That's all it took to make every AI system before it obsolete overnight — and to birth the engine powering ChatGPT, Claude, Gemini, and every other LLM you've ever used.
+        </p>
+        <p>
+          Before 2017, teaching a computer to understand language was like reading through a straw — one word at a time, forgetting the beginning by the end. Then came <strong>"Attention Is All You Need"</strong> and everything changed. Forever.
+        </p>
+        <p>
+          This post breaks it down completely — no PhD required. You'll understand <em>why</em> Transformers beat everything before them, <em>how</em> self-attention actually works (with a real-world analogy you'll never forget), and <em>what</em> this means for building AI today.
+        </p>
+
+        <div className="bp-callout bp-callout--info">
+          <span className="bp-callout-icon">🎯</span>
+          <div>
+            <strong>What you'll master:</strong> The vanishing gradient problem, tokenization & embeddings, self-attention (Q/K/V), multi-head attention, positional encoding, the encoder-decoder architecture, and how GPT vs BERT differ — all with code and real analogies.
+          </div>
+        </div>
+      </div>
+
+      {/* ── Stats ── */}
+      <div className="bp-stats-row">
+        {[
+          { value: '2017', unit: '', label: 'year that changed AI forever' },
+          { value: '8', unit: 'authors', label: 'who wrote the paper' },
+          { value: '100K+', unit: 'citations', label: 'most cited AI paper ever' },
+          { value: '∞', unit: 'impact', label: 'GPT, Claude, Gemini, BERT…' },
+        ].map(s => (
+          <div key={s.label} className="bp-stat-item">
+            <div className="bp-stat-value">{s.value}<span className="bp-stat-unit"> {s.unit}</span></div>
+            <div className="bp-stat-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Part 1: Why Transformers? ── */}
+      <div className="bp-prose">
+        <h2>🔄 Part 1: Why Were Transformers Invented?</h2>
+        <p>
+          To understand why Transformers are revolutionary, you need to feel the pain of what came before: <strong>RNNs (Recurrent Neural Networks)</strong> and <strong>LSTMs</strong>.
+        </p>
+        <p>
+          Imagine playing a game of <em>Telephone</em> with 20 people in a line. The first person whispers a complex story. By the time it reaches the last person, it's a garbled mess. The middle and early parts get distorted or completely forgotten. This is called the <strong>Vanishing Gradient Problem</strong> — the earlier parts of a sentence have almost zero influence on later decisions.
+        </p>
+
+        <div className="bp-callout bp-callout--tip">
+          <span className="bp-callout-icon">🤔</span>
+          <div>
+            <strong>The real killer problem?</strong> RNNs are <em>sequential</em> — they process one word, then the next, then the next. You can't parallelize this. Training on millions of sentences means millions of sequential steps. With a GPU that can do thousands of operations simultaneously, this is like using a Ferrari to drive 5 mph in a school zone.
+          </div>
+        </div>
+
+        <div className="bp-diagram-wrap">
+          <img
+            src="/blog_transformers_rnn_vs_tf.png"
+            alt="RNN vs Transformer: Sequential vs Parallel Processing"
+            className="bp-diagram"
+          />
+          <p className="bp-image-caption">RNNs whisper down the line (and forget). Transformers put everyone in a group chat.</p>
+        </div>
+
+        <p>
+          <strong>The Transformer's breakthrough?</strong> Throw away sequential processing entirely. Instead of passing information down a chain, every word in a sentence can talk directly to every other word — <em>all at once, in parallel</em>. The architecture literally replaced recurrence with <strong>Attention</strong>.
+        </p>
+      </div>
+
+      {/* ── Part 2: Tokens & Embeddings ── */}
+      <div className="bp-prose">
+        <h2>🧬 Part 2: How Computers Read Words</h2>
+        <p>
+          Before attention can work its magic, text needs to be converted into something computers understand: <strong>numbers</strong>. This happens in two steps.
+        </p>
+
+        <div className="bp-phase-columns" style={{ marginBottom: '24px' }}>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '20px' }}>
+            <div className="bp-col-label" style={{ marginBottom: '10px' }}>🔤 Step 1 — Tokenization</div>
+            <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--text-primary)', margin: 0 }}>
+              Text is chopped into <strong>tokens</strong> — the atomic units of language. <code style={{ background: 'rgba(0,0,0,0.06)', padding: '2px 6px', borderRadius: '4px', fontSize: '13px' }}>"unbelievable"</code> might become <code style={{ background: 'rgba(0,0,0,0.06)', padding: '2px 6px', borderRadius: '4px', fontSize: '13px' }}>["un", "believ", "able"]</code>. GPT-4 uses ~100,000 different tokens.
+            </p>
+          </div>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '20px' }}>
+            <div className="bp-col-label" style={{ marginBottom: '10px' }}>🧮 Step 2 — Embeddings</div>
+            <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--text-primary)', margin: 0 }}>
+              Each token becomes a <strong>vector</strong> — a list of numbers that encode its meaning. The magic: similar words live close together in math space. <em>"King" − "Man" + "Woman" ≈ "Queen"</em>.
+            </p>
+          </div>
+        </div>
+
+        <div className="bp-diagram-wrap">
+          <img
+            src="/blog_transformers_embeddings.png"
+            alt="Word Embedding Space"
+            className="bp-diagram"
+          />
+          <p className="bp-image-caption">Embedding space: Words with similar meanings cluster together based on learned numbers.</p>
+        </div>
+      </div>
+
+      {/* ── Part 3: Self-Attention ── */}
+      <div className="bp-prose">
+        <h2>🔥 Part 3: Self-Attention — The Heart of the Machine</h2>
+        <p>
+          This is the concept that changed everything. Self-attention answers one question: <em>"For every word in this sentence, which other words should I pay the most attention to?"</em>
+        </p>
+        <p>
+          Let's use a concrete example. In the sentence <strong>"The animal didn't cross the street because <em>it</em> was too tired"</strong> — what does "it" refer to? The animal or the street?
+        </p>
+        <p>
+          A human knows instantly: the animal. Self-attention figures this out mathematically.
+        </p>
+
+        <div className="bp-callout bp-callout--info">
+          <span className="bp-callout-icon">🎬</span>
+          <div>
+            <strong>The YouTube Search Analogy — Q, K, V explained:</strong>
+            <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+              <li><strong>Query (Q):</strong> What you're searching for ("funny cat videos").</li>
+              <li><strong>Key (K):</strong> The metadata of every video (titles, tags).</li>
+              <li><strong>Value (V):</strong> The actual video content you retrieve.</li>
+            </ul>
+            The model computes how well each Q matches each K, then uses those scores to take a weighted average of the Vs.
+          </div>
+        </div>
+
+        <div className="bp-diagram-wrap">
+          <img
+            src="/blog_transformers_attention.png"
+            alt="Self-Attention Visualization"
+            className="bp-diagram"
+          />
+          <p className="bp-image-caption">When processing "it", the model attends strongly to "animal" because of the context.</p>
+        </div>
+
+        <div className="bp-diagram-wrap">
+          <img
+            src="/blog_transformer_attention_art.png"
+            alt="Artistic visualization of Attention Mechanism"
+            className="bp-diagram"
+            style={{ mixBlendMode: 'normal' }}
+          />
+          <p className="bp-image-caption">Visualizing Selective Attention: A central node strongly connecting to highly-relevant context while ignoring the rest.</p>
+        </div>
+      </div>
+
+      {/* ── Part 4: Python Code ── */}
+      <div className="bp-prose">
+        <h2>🐍 Part 4: Minimal Python Implementation</h2>
+        <p>Here is what the math looks like in code. Each token becomes context-aware after this operation:</p>
+        <CodeBlock language="python" code={`import torch
+import torch.nn.functional as F
+
+# 3 tokens, embedding size 4
+X = torch.randn(3, 4) 
+
+# Weight matrices (learned during training)
+W_Q = torch.randn(4, 4)
+W_K = torch.randn(4, 4)
+W_V = torch.randn(4, 4)
+
+# Compute Q, K, V
+Q = X @ W_Q 
+K = X @ W_K 
+V = X @ W_V 
+
+# Compute attention scores (The "Search")
+scores = Q @ K.T / (4 ** 0.5)
+weights = F.softmax(scores, dim=-1)
+
+# Weighted combination of values
+output = weights @ V
+
+print("Attention weights (percentages):")
+print(weights)`} />
+      </div>
+
+      {/* ── Part 5: Multi-Head Attention ── */}
+      <div className="bp-prose">
+        <h2>🎭 Part 5: Multi-Head Attention — Seeing with Many Eyes</h2>
+        <p>
+          One attention head is good. But what if different parts of the model needed to pay attention for <em>different reasons</em> simultaneously? <strong>Multi-head attention</strong> runs multiple attention operations in parallel, each learning different relationship patterns.
+        </p>
+      </div>
+
+      {/* ── Part 6: Positional Encoding ── */}
+      <div className="bp-prose">
+        <h2>📍 Part 6: Positional Encoding — Order Matters</h2>
+        <p>
+          Because attention looks at all words at once, it doesn't know their order. We fix this by adding a "timestamp" or ticket number to every word, so the model knows "cat sat mat" is different from "mat sat cat".
+        </p>
+      </div>
+
+      {/* ── Part 7: Architecture ── */}
+      <div className="bp-prose">
+        <h2>🏗️ Part 7: The Blueprint — Encoder & Decoder</h2>
+        <p>A standard Transformer is like a high-end translation service:</p>
+        <ul>
+          <li><strong>Encoder:</strong> Reads and understands the input. It produces a rich "context" map.</li>
+          <li><strong>Decoder:</strong> Generates the output, one word at a time, using that map.</li>
+        </ul>
+      </div>
+
+      {/* ── Part 8: Real-World Flavors ── */}
+      <div className="bp-prose">
+        <h2>🌍 Part 8: Real-World Model Flavors</h2>
+        <div className="bp-diagram-wrap">
+          <img
+            src="/blog_transformers_models.png"
+            alt="Transformer Model Types"
+            className="bp-diagram"
+          />
+          <p className="bp-image-caption">The transformer family tree: architectures optimized for different superpowers.</p>
+        </div>
+        <div className="bp-model-cards">
+          <div className="bp-model-card">
+            <div className="bp-model-card-header">
+              <span className="bp-model-icon">🧠</span>
+              <strong>Decoder-only (GPT, Claude, Llama)</strong>
+            </div>
+            <p>The masters of generation. They read left-to-right and predict the next word.</p>
+          </div>
+          <div className="bp-model-card">
+            <div className="bp-model-card-header">
+              <span className="bp-model-icon">🔍</span>
+              <strong>Encoder-only (BERT)</strong>
+            </div>
+            <p>The kings of understanding and search. They look at the full context in both directions simultaneously.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Part 9: Practical Applications ── */}
+      <div className="bp-prose">
+        <h2>🚀 Part 9: Practical Applications</h2>
+        <table className="bp-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>How Transformers Help</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chatbots</strong></td>
+              <td>Decoder generates next word based on history.</td>
+            </tr>
+            <tr>
+              <td><strong>Summarization</strong></td>
+              <td>Encoder understands full doc; Decoder shortens it.</td>
+            </tr>
+            <tr>
+              <td><strong>Code Completion</strong></td>
+              <td>Decoder predicts next code token (Copilot).</td>
+            </tr>
+            <tr>
+              <td><strong>Semantic Search</strong></td>
+              <td>Encoder turns queries into embeddings for comparison.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* ── Conclusion ── */}
+      <div className="bp-prose bp-prose--final">
+        <h2>🏁 Final Thoughts</h2>
+        <p>
+          Transformers aren't just a trend; they are a fundamental shift in how we build intelligent systems. 
+          By moving from sequential processing to parallel attention, we've unlocked the ability to process 
+          trillions of tokens and create models that feel almost human.
+        </p>
+        <div className="bp-divider" />
+        <p className="bp-closing">
+          Ready to build your own? Check out my <Link to="/blogs/genai-agentic-roadmap" className="bp-inline-link">GenAI Roadmap</Link> to start your journey.
+        </p>
+      </div>
+    </article>
+  );
+}
+
 /* ─── Blog Post Page ────────────────────────────────────────── */
 export default function BlogPost() {
   const { slug } = useParams();
@@ -971,6 +1295,7 @@ export default function BlogPost() {
       <Link to="/blogs" className="bp-back-link">← Back to Blogs</Link>
       {slug === 'prompt-engineering-masterclass' && <PromptEngineeringContent />}
       {slug === 'genai-agentic-roadmap' && <GenAIRoadmapContent />}
+      {slug === 'decoding-transformers' && <TransformersContent />}
     </div>
   );
 }
