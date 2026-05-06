@@ -8,8 +8,24 @@ import myportalImg from '../assets/myportalDashboard.png';
 import spilloImg from '../assets/spillo-exim.png';
 import jobpilotImg from '../assets/jobpilot.png';
 import oneyottaAppImg from '../assets/oneyottaapp.png';
+import nyayaproImg from '../assets/nyayapro.png';
+
 
 const allProjects = [
+  {
+    id: 7,
+    title: 'Nyaya-Pro AI',
+    subtitle: 'Agentic Legal RAG Assistant (v2.0)',
+    description:
+      'A production-grade, multimodal AI assistant for the Indian Legal System. Features real-time voice mode (Hinglish), vision mode for document analysis, and an advanced RAG pipeline with exact-match boosting.',
+    image: nyayaproImg,
+    status: 'active',
+    visitUrl: 'https://nyaya-pro-assistant.vercel.app/',
+    githubUrl: 'https://github.com/man101jha/nyaya-pro-assistant',
+    tags: ['Next.js', 'FastAPI', 'Groq', 'Pinecone', 'Multimodal', 'RAG'],
+    category: 'AI & Personal',
+  },
+
   {
     id: 5,
     title: 'JobPilot AI',

@@ -57,6 +57,9 @@ export default function Home() {
           </a>
           . I build scalable enterprise web platforms and high-performance mobile applications, 
           including projects like{' '}
+          <a href="https://nyaya-pro-assistant.vercel.app/" target="_blank" rel="noopener noreferrer" className="bio-link">
+            Nyaya-Pro AI
+          </a>,{' '}
           <a href="https://examgenie-ai.vercel.app/upload" target="_blank" rel="noopener noreferrer" className="bio-link">
             ExamGenie AI
           </a>,{' '}
