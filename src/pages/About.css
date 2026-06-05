@@ -50,3 +50,16 @@
   flex-wrap: wrap;
   gap: 6px;
 }
+
+/* ─── Links styling in About text ─────────────────────────── */
+.about-text a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: opacity var(--transition);
+}
+
+.about-text a:hover {
+  opacity: 0.7;
+}

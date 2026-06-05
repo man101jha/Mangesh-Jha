@@ -17,7 +17,7 @@ const socialLinks = [
   { href: 'https://github.com/man101jha', label: 'Github', icon: '©' },
 ];
 
-const typewriterWords = ['Frontend Developer', 'Flutter Developer', 'AI Learner', 'Problem Solver'];
+const typewriterWords = ['Frontend Developer', 'AI Engineer', 'AI Learner', 'Problem Solver'];
 
 export default function Sidebar() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -82,6 +82,16 @@ export default function Sidebar() {
               {label}
             </NavLink>
           ))}
+          <a
+            href="https://drive.google.com/file/d/1ZmcuSrLxSECxkuEhjipMEn4Eu4eFZKa1/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sidebar-nav-link"
+            style={{ marginTop: '4px' }}
+          >
+            <span className="nav-icon">↓</span>
+            Resume
+          </a>
         </nav>
 
         {/* Social */}

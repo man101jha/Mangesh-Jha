@@ -2,11 +2,11 @@ import React from 'react';
 import './About.css';
 
 const skills = [
-  { category: 'Frontend', items: ['Next.js', 'React', 'Angular (v17)', 'TypeScript', 'RxJS', 'NgRx', 'SCSS'] },
-  { category: 'Mobile', items: ['Flutter', 'Dart', 'Android & iOS Development'] },
+  { category: 'AI / LLM', items: ['LangChain', 'CrewAI', 'Groq API', 'Google Gemini', 'OpenAI API', 'Ollama', 'RAG', 'FAISS', 'Pinecone', 'Multi-Agent Orchestration'] },
   { category: 'Backend', items: ['FastAPI', 'Python', 'Node.js'] },
-  { category: 'AI', items: ['CrewAI', 'Ollama', 'Groq API', 'LLMs', 'Google Gemini', 'Prompt Engineering'] },
-  { category: 'Tools', items: ['Git', 'Keycloak', 'Vercel', 'Firebase', 'VS Code', 'Azure AD'] },
+  { category: 'Frontend', items: ['Angular 17', 'Next.js', 'TypeScript', 'RxJS', 'NgRx', 'SCSS'] },
+  { category: 'Mobile', items: ['Flutter', 'Dart'] },
+  { category: 'Tools', items: ['Git', 'Vercel', 'Keycloak', 'Azure AD', 'OAuth 2.0'] },
 ];
 
 export default function About() {
@@ -21,19 +21,13 @@ export default function About() {
         <h2 className="about-section-title">Who I Am</h2>
         <div className="about-text">
           <p>
-            I'm a <strong>Frontend & Flutter Developer</strong> at <strong>Yotta Infrastructures</strong>, 
-            where I've been building scalable enterprise platforms since 2023. My expertise lies in 
-            bridging the gap between complex backend systems and intuitive, modern user interfaces.
+            I'm an <strong>AI Engineer and Full-Stack Developer</strong> at <strong>Yotta Infrastructures</strong>, building production AI applications alongside enterprise-scale platforms.
           </p>
           <p>
-            My recent focus has been on <strong>AI-powered products</strong>. I've developed platforms like 
-            <em> JobPilot AI</em> and <em>ExamGenie AI</em>, which leverage multi-agent orchestration 
-            and large language models to solve real-world problems.
+            My AI work spans agentic RAG systems, multi-agent orchestration with CrewAI, and LLM-powered products using Groq, Google Gemini, and OpenAI APIs. <a href="https://nyaya-pro-assistant.vercel.app/" target="_blank" rel="noopener noreferrer">Nyaya-Pro</a> — my flagship project — is a legal RAG assistant grounded in Indian legal corpora with cross-encoder re-ranking and cited responses. <a href="https://jobpilot-ai-rho.vercel.app/" target="_blank" rel="noopener noreferrer">JobPilot AI</a> and <a href="https://examgenie-ai.vercel.app/upload" target="_blank" rel="noopener noreferrer">ExamGenie AI</a> are deployed and actively used.
           </p>
           <p>
-            I believe in the power of "shipping fast and iterating." Whether it's a web portal for 
-            thousands of enterprise users or a mobile app for on-the-go management, I strive for 
-            performance, security, and a premium user experience.
+            My frontend depth (Angular, Flutter, Next.js) means I don't just build models — I ship complete AI products end to end.
           </p>
         </div>
       </section>
@@ -66,8 +60,7 @@ export default function About() {
             the importance of building systems that are robust, secure, and ready to grow.
           </p>
           <p>
-            <strong>Continuous Learning:</strong> The tech landscape—especially AI—is moving fast. 
-            I'm committed to staying at the forefront of these changes to build better products.
+            <strong>Build in public, ship fast:</strong> The best way to learn AI engineering is to deploy it. Every project I build solves a real problem and goes live.
           </p>
         </div>
       </section>

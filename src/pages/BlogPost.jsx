@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './BlogPost.css';
 
@@ -707,7 +707,7 @@ response = client.messages.create(
         <h2>🏁 Final Thoughts</h2>
         <p>
           Prompt engineering isn't a hack or a workaround — it's the <strong>interface layer
-          between human intent and machine capability</strong>. The engineers who master it don't
+            between human intent and machine capability</strong>. The engineers who master it don't
           just get better answers. They build entirely new products.
         </p>
         <p>
@@ -1261,8 +1261,8 @@ print(weights)`} />
       <div className="bp-prose bp-prose--final">
         <h2>🏁 Final Thoughts</h2>
         <p>
-          Transformers aren't just a trend; they are a fundamental shift in how we build intelligent systems. 
-          By moving from sequential processing to parallel attention, we've unlocked the ability to process 
+          Transformers aren't just a trend; they are a fundamental shift in how we build intelligent systems.
+          By moving from sequential processing to parallel attention, we've unlocked the ability to process
           trillions of tokens and create models that feel almost human.
         </p>
         <div className="bp-divider" />

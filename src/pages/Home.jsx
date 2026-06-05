@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className="hero-role">
-          Frontend Developer · Flutter Developer · AI Learner
+          AI Engineer · Full-Stack · LLM Applications
           <span className="role-arrow">▶</span>
         </p>
 
@@ -36,17 +36,7 @@ export default function Home() {
       {/* ── Bio ──────────────────────────────────── */}
       <section className="bio">
         <p className="bio-main">
-          I build high-performance web applications and I'm currently 
-          obsessed with <em>integrating AI</em> into the frontend.
-        </p>
-
-        <p className="bio-sub">
-          This is my personal website where I document my work as a Frontend 
-          Engineer and my progress in building intelligent web products.
-        </p>
-
-        <p className="bio-body">
-          Currently working as a <strong>Frontend & Flutter Developer</strong> at{' '}
+          I build and ship AI-powered products — from agentic RAG pipelines to multi-agent orchestration systems. At{' '}
           <a
             href="https://yotta.com"
             target="_blank"
@@ -55,35 +45,38 @@ export default function Home() {
           >
             Yotta Infrastructures
           </a>
-          . I build scalable enterprise web platforms and high-performance mobile applications, 
-          including projects like{' '}
-          <a href="https://nyaya-pro-assistant.vercel.app/" target="_blank" rel="noopener noreferrer" className="bio-link">
-            Nyaya-Pro AI
-          </a>,{' '}
-          <a href="https://examgenie-ai.vercel.app/upload" target="_blank" rel="noopener noreferrer" className="bio-link">
-            ExamGenie AI
-          </a>,{' '}
-          <a href="/projects" className="bio-link">
-            OneYotta Portal & App
-          </a>{' '}
-          and{' '}
-          <a href="/projects" className="bio-link">
-            MyPortal
-          </a>.
-        </p>
-
-        <p className="bio-body">
-          You can talk to me about <strong>AI, new ideas, life, or anything else.</strong>
-          <br />
-          Say Hi on{' '}
+          , I've delivered enterprise-scale platforms used by thousands. My AI work:{' '}
           <a
-            href="https://www.linkedin.com/in/mangesh-jha"
+            href="https://nyaya-pro-assistant.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bio-link bio-link--bold"
+            className="bio-link"
           >
-            LinkedIn
-          </a>
+            Nyaya-Pro
+          </a>{' '}
+          (legal RAG assistant with semantic re-ranking and zero-hallucination design),{' '}
+          <a
+            href="https://jobpilot-ai-rho.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bio-link"
+          >
+            JobPilot AI
+          </a>{' '}
+          (CrewAI multi-agent pipeline), and{' '}
+          <a
+            href="https://examgenie-ai.vercel.app/upload"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bio-link"
+          >
+            ExamGenie AI
+          </a>{' '}
+          — all deployed and live.
+        </p>
+
+        <p className="bio-sub">
+          This is where I document shipped AI products, engineering decisions, and what I'm building next.
         </p>
       </section>
 
@@ -91,6 +84,14 @@ export default function Home() {
       <div className="cta-row">
         <a href="/contact" className="cta-btn cta-btn--primary">Contact</a>
         <a href="mailto:mangesh105jha@gmail.com" className="cta-btn cta-btn--outline">✉ E-Mail</a>
+        <a 
+          href="https://drive.google.com/file/d/1ZmcuSrLxSECxkuEhjipMEn4Eu4eFZKa1/view?usp=sharing" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="cta-btn cta-btn--outline"
+        >
+          ↓ Resume
+        </a>
       </div>
 
 
