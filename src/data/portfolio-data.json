@@ -1,0 +1,215 @@
+{
+  "profile": {
+    "name": "Mangesh Jha",
+    "roles": ["AI Engineer", "Full-Stack", "LLM Applications"],
+    "typewriterWords": ["Frontend Developer", "AI Engineer", "AI Learner", "Problem Solver"],
+    "email": "mangesh105jha@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/mangesh-jha",
+    "github": "https://github.com/man101jha",
+    "resumeUrl": "https://drive.google.com/file/d/1ZmcuSrLxSECxkuEhjipMEn4Eu4eFZKa1/view?usp=sharing"
+  },
+  "home": {
+    "heroSubtitle": "AI Engineer · Full-Stack · LLM Applications",
+    "bioMain": "I build and ship AI-powered products — from agentic RAG pipelines to multi-agent orchestration systems. At <a href=\"https://yotta.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"bio-link\">Yotta Infrastructures</a>, I've delivered enterprise-scale platforms used by thousands. My AI work: <a href=\"https://nyaya-pro-assistant.vercel.app/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"bio-link\">Nyaya-Pro</a> (legal RAG assistant with semantic re-ranking and zero-hallucination design), <a href=\"https://jobpilot-ai-rho.vercel.app/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"bio-link\">JobPilot AI</a> (CrewAI multi-agent pipeline), and <a href=\"https://examgenie-ai.vercel.app/upload\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"bio-link\">ExamGenie AI</a> — all deployed and live.",
+    "bioSub": "This is where I document shipped AI products, engineering decisions, and what I'm building next."
+  },
+  "about": {
+    "whoIAm": [
+      "I'm an AI Engineer and Full-Stack Developer at Yotta Infrastructures, building production AI applications alongside enterprise-scale platforms.",
+      "My AI work spans agentic RAG systems, multi-agent orchestration with CrewAI, and LLM-powered products using Groq, Google Gemini, and OpenAI APIs. <a href=\"https://nyaya-pro-assistant.vercel.app/\" target=\"_blank\" rel=\"noopener noreferrer\">Nyaya-Pro</a> — my flagship project — is a legal RAG assistant grounded in Indian legal corpora with cross-encoder re-ranking and cited responses. <a href=\"https://jobpilot-ai-rho.vercel.app/\" target=\"_blank\" rel=\"noopener noreferrer\">JobPilot AI</a> and <a href=\"https://examgenie-ai.vercel.app/upload\" target=\"_blank\" rel=\"noopener noreferrer\">ExamGenie AI</a> are deployed and actively used.",
+      "My frontend depth (Angular, Flutter, Next.js) means I don't just build models — I ship complete AI products end to end."
+    ],
+    "beliefs": [
+      {
+        "title": "User-First Design",
+        "desc": "Great software is invisible. Users shouldn't notice the interface; they should just accomplish their goals effortlessly."
+      },
+      {
+        "title": "Scalability & Security",
+        "desc": "Working in the infrastructure space has taught me the importance of building systems that are robust, secure, and ready to grow."
+      },
+      {
+        "title": "Build in public, ship fast",
+        "desc": "The best way to learn AI engineering is to deploy it. Every project I build solves a real problem and goes live."
+      }
+    ],
+    "skills": [
+      {
+        "category": "AI / LLM",
+        "items": ["LangChain", "CrewAI", "Groq API", "Google Gemini", "OpenAI API", "Ollama", "RAG", "FAISS", "Pinecone", "Multi-Agent Orchestration"]
+      },
+      {
+        "category": "Backend",
+        "items": ["FastAPI", "Python", "Node.js"]
+      },
+      {
+        "category": "Frontend",
+        "items": ["Angular 17", "Next.js", "TypeScript", "RxJS", "NgRx", "SCSS"]
+      },
+      {
+        "category": "Mobile",
+        "items": ["Flutter", "Dart"]
+      },
+      {
+        "category": "Tools",
+        "items": ["Git", "Vercel", "Keycloak", "Azure AD", "OAuth 2.0"]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": 7,
+      "title": "Nyaya-Pro AI",
+      "subtitle": "Agentic Legal RAG Assistant (v2.0)",
+      "description": "A production-grade, multimodal AI assistant for the Indian Legal System. Features real-time voice mode (Hinglish), vision mode for document analysis, and an advanced RAG pipeline with exact-match boosting.",
+      "image": "nyayapro.png",
+      "status": "active",
+      "visitUrl": "https://nyaya-pro-assistant.vercel.app/",
+      "githubUrl": "https://github.com/man101jha/nyaya-pro-assistant",
+      "tags": ["Next.js", "FastAPI", "Groq", "Pinecone", "Multimodal", "RAG"],
+      "category": "AI & Personal"
+    },
+    {
+      "id": 5,
+      "title": "JobPilot AI",
+      "subtitle": "AI Job Application Assistant",
+      "description": "An AI-powered job application assistant orchestrated with CrewAI. Built using local Ollama models for development and Groq API for high-speed production inference.",
+      "image": "jobpilot.png",
+      "status": "active",
+      "visitUrl": "https://jobpilot-ai-rho.vercel.app/",
+      "githubUrl": "https://github.com/man101jha/jobpilot-AI",
+      "tags": ["Next.js", "FastAPI", "CrewAI", "Ollama", "Groq API"],
+      "category": "AI & Personal"
+    },
+    {
+      "id": 1,
+      "title": "ExamGenie AI",
+      "subtitle": "AI Exam Generator",
+      "description": "A powerful platform that transforms study PDFs into interactive, smart exams with instant feedback and explanations. Built with Angular and powered by Google Gemini.",
+      "image": "examgenie.png",
+      "status": "active",
+      "visitUrl": "https://examgenie-ai.vercel.app/upload",
+      "githubUrl": "https://github.com/man101jha/examgenie-ai",
+      "tags": ["Angular", "AI/LLM", "Google Gemini", "TypeScript"],
+      "category": "AI & Personal"
+    },
+    {
+      "id": 2,
+      "title": "OneYotta Portal",
+      "subtitle": "Customer-facing platform | Yotta Infrastructures",
+      "description": "A scalable customer portal for managing data center resources, invoices, and real-time monitoring. Built with Angular 17 and integrated with Keycloak for security.",
+      "image": "oneyottadashboard.png",
+      "status": "active",
+      "visitUrl": "https://account.yotta.com/",
+      "githubUrl": null,
+      "tags": ["Angular", "TypeScript", "NgRx", "Keycloak"],
+      "category": "Work"
+    },
+    {
+      "id": 6,
+      "title": "OneYotta App",
+      "subtitle": "Mobile Application | Yotta Infrastructures",
+      "description": "A comprehensive Flutter application for OneYotta portal, providing data center management and monitoring on the go for Android and iOS.",
+      "image": "oneyottaapp.png",
+      "status": "active",
+      "visitUrl": "https://play.google.com/store/apps/details?id=com.oneyotta&referrer=utm_source%3Dappbrain%26utm_medium%3Dappbrain_web%26utm_campaign%3Dappbrain_web",
+      "visitLabel": "Play Store",
+      "githubUrl": "https://apps.apple.com/in/app/oneyotta/id6758011343",
+      "githubLabel": "App Store",
+      "tags": ["Flutter", "Dart", "Mobile Development", "Android", "iOS"],
+      "category": "Work"
+    },
+    {
+      "id": 3,
+      "title": "MyPortal",
+      "subtitle": "Internal Operations | Yotta Infrastructures",
+      "description": "An internal dashboard for monitoring server utilization, networking, and storage backup operations. Features real-time data visualization and CCTV integration.",
+      "image": "myportalDashboard.png",
+      "status": "active",
+      "visitUrl": "https://myportal.yotta.com/",
+      "githubUrl": null,
+      "tags": ["Angular", "RxJS", "D3.js", "Bootstrap"],
+      "category": "Work"
+    },
+    {
+      "id": 4,
+      "title": "Spillo Exim",
+      "subtitle": "Client Project | Spices Export",
+      "description": "A high-performance business website developed for a spices export client, focusing on global marketing and interactive product displays.",
+      "image": "spillo-exim.png",
+      "status": "shipped",
+      "visitUrl": "https://man101jha.github.io/spillo-exim/",
+      "githubUrl": "https://github.com/man101jha/spillo-exim",
+      "tags": ["HTML", "CSS", "JavaScript", "Client Project"],
+      "category": "Client"
+    }
+  ],
+  "experiences": [
+    {
+      "period": "April 2025 – Present",
+      "role": "Senior Software Developer",
+      "company": "Yotta Infrastructures Pvt Ltd",
+      "companyUrl": "https://yotta.com",
+      "description": "Leading frontend architecture and building intelligent, high-performance web solutions for large-scale enterprise monitoring.",
+      "bullets": [
+        "Leading the frontend architecture for next-gen data center operations platforms.",
+        "Mentoring junior developers and conducting deep code reviews for quality and scalability.",
+        "Exploring and integrating AI-powered insights into real-time monitoring workflows.",
+        "Optimizing complex CCTV live-playback streams for reduced latency and better UX."
+      ],
+      "tags": ["Angular 17", "AI Integration", "Frontend Architecture", "Leadership"]
+    },
+    {
+      "period": "April 2024 – March 2025",
+      "role": "Executive",
+      "company": "Yotta Infrastructures Pvt Ltd",
+      "companyUrl": "https://yotta.com",
+      "description": "Focused on owning core modules and improving platform security and performance.",
+      "bullets": [
+        "Successfully led the migration of major Angular applications from v14 to v17.",
+        "Integrated enterprise-grade authentication using Keycloak and Azure AD for secure access control.",
+        "Developed and optimized invoicing and reporting systems for OneYotta.",
+        "Improved dashboard performance by 30% through NgRx state management optimizations."
+      ],
+      "tags": ["NgRx", "RxJS", "Keycloak", "Performance Optimization"]
+    },
+    {
+      "period": "May 2023 – March 2024",
+      "role": "Graduate Trainee",
+      "company": "Yotta Infrastructures Pvt Ltd",
+      "companyUrl": "https://yotta.com",
+      "description": "Assisting in the development of monitoring tools and learning enterprise-scale development practices.",
+      "bullets": [
+        "Contributed to the initial development of MyPortal operations monitoring tools.",
+        "Built reusable shared components using Angular Material for consistent UI across products.",
+        "Assisted in data visualization tasks using D3.js and Chart.js for server utilization metrics.",
+        "Collaborated closely with backend teams to integrate RESTful APIs efficiently."
+      ],
+      "tags": ["Angular", "TypeScript", "Angular Material", "D3.js"]
+    }
+  ],
+  "tools": [
+    { "name": "VS Code", "desc": "Code Editor", "icon": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" },
+    { "name": "Keycloak", "desc": "Auth Service", "icon": "keycloak.png" },
+    { "name": "Antigravity", "desc": "AI Coworker", "icon": "antigravity.png" },
+    { "name": "GitHub", "desc": "Version Control", "icon": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" },
+    { "name": "npm", "desc": "Package Manager", "icon": "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" },
+    { "name": "Vercel", "desc": "Deployment", "icon": "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" },
+    { "name": "AI Studio", "desc": "Google AI", "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png" },
+    { "name": "Firebase", "desc": "Backend Service", "icon": "https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg" },
+    { "name": "Flutter", "desc": "Mobile Dev", "icon": "flutter.png" },
+    { "name": "Next.js", "desc": "React Framework", "icon": "https://cdn.worldvectorlogo.com/logos/next-js.svg" },
+    { "name": "FastAPI", "desc": "Python Framework", "icon": "FastAPI.png" }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "Generative AI Developer",
+      "issuer": "Google Cloud",
+      "issueDate": "2025",
+      "credentialUrl": "https://cloud.google.com/certification",
+      "credentialId": "GC-GENAI-1234",
+      "image": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png"
+    }
+  ]
+}

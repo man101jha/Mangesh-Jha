@@ -1,112 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Projects.css';
-
-// Project Images
-import examgenieImg from '../assets/examgenie.png';
-import oneyottaImg from '../assets/oneyottadashboard.png';
-import myportalImg from '../assets/myportalDashboard.png';
-import spilloImg from '../assets/spillo-exim.png';
-import jobpilotImg from '../assets/jobpilot.png';
-import oneyottaAppImg from '../assets/oneyottaapp.png';
-import nyayaproImg from '../assets/nyayapro.png';
-
-
-const allProjects = [
-  {
-    id: 7,
-    title: 'Nyaya-Pro AI',
-    subtitle: 'Agentic Legal RAG Assistant (v2.0)',
-    description:
-      'A production-grade, multimodal AI assistant for the Indian Legal System. Features real-time voice mode (Hinglish), vision mode for document analysis, and an advanced RAG pipeline with exact-match boosting.',
-    image: nyayaproImg,
-    status: 'active',
-    visitUrl: 'https://nyaya-pro-assistant.vercel.app/',
-    githubUrl: 'https://github.com/man101jha/nyaya-pro-assistant',
-    tags: ['Next.js', 'FastAPI', 'Groq', 'Pinecone', 'Multimodal', 'RAG'],
-    category: 'AI & Personal',
-  },
-
-  {
-    id: 5,
-    title: 'JobPilot AI',
-    subtitle: 'AI Job Application Assistant',
-    description:
-      'An AI-powered job application assistant orchestrated with CrewAI. Built using local Ollama models for development and Groq API for high-speed production inference.',
-    image: jobpilotImg,
-    status: 'active',
-    visitUrl: 'https://jobpilot-ai-rho.vercel.app/',
-    githubUrl: 'https://github.com/man101jha/jobpilot-AI',
-    tags: ['Next.js', 'FastAPI', 'CrewAI', 'Ollama', 'Groq API'],
-    category: 'AI & Personal',
-  },
-  {
-    id: 1,
-    title: 'ExamGenie AI',
-    subtitle: 'AI Exam Generator',
-    description:
-      'A powerful platform that transforms study PDFs into interactive, smart exams with instant feedback and explanations. Built with Angular and powered by Google Gemini.',
-    image: examgenieImg,
-    status: 'active',
-    visitUrl: 'https://examgenie-ai.vercel.app/upload',
-    githubUrl: 'https://github.com/man101jha/examgenie-ai',
-    tags: ['Angular', 'AI/LLM', 'Google Gemini', 'TypeScript'],
-    category: 'AI & Personal',
-  },
-  {
-    id: 2,
-    title: 'OneYotta Portal',
-    subtitle: 'Customer-facing platform | Yotta Infrastructures',
-    description:
-      'A scalable customer portal for managing data center resources, invoices, and real-time monitoring. Built with Angular 17 and integrated with Keycloak for security.',
-    image: oneyottaImg,
-    status: 'active',
-    visitUrl: 'https://account.yotta.com/',
-    githubUrl: null,
-    tags: ['Angular', 'TypeScript', 'NgRx', 'Keycloak'],
-    category: 'Work',
-  },
-  {
-    id: 6,
-    title: 'OneYotta App',
-    subtitle: 'Mobile Application | Yotta Infrastructures',
-    description:
-      'A comprehensive Flutter application for OneYotta portal, providing data center management and monitoring on the go for Android and iOS.',
-    image: oneyottaAppImg,
-    status: 'active',
-    visitUrl: 'https://play.google.com/store/apps/details?id=com.oneyotta&referrer=utm_source%3Dappbrain%26utm_medium%3Dappbrain_web%26utm_campaign%3Dappbrain_web',
-    visitLabel: 'Play Store',
-    githubUrl: 'https://apps.apple.com/in/app/oneyotta/id6758011343',
-    githubLabel: 'App Store',
-    tags: ['Flutter', 'Dart', 'Mobile Development', 'Android', 'iOS'],
-    category: 'Work',
-  },
-  {
-    id: 3,
-    title: 'MyPortal',
-    subtitle: 'Internal Operations | Yotta Infrastructures',
-    description:
-      'An internal dashboard for monitoring server utilization, networking, and storage backup operations. Features real-time data visualization and CCTV integration.',
-    image: myportalImg,
-    status: 'active',
-    visitUrl: 'https://myportal.yotta.com/',
-    githubUrl: null,
-    tags: ['Angular', 'RxJS', 'D3.js', 'Bootstrap'],
-    category: 'Work',
-  },
-  {
-    id: 4,
-    title: 'Spillo Exim',
-    subtitle: 'Client Project | Spices Export',
-    description:
-      'A high-performance business website developed for a spices export client, focusing on global marketing and interactive product displays.',
-    image: spilloImg,
-    status: 'shipped',
-    visitUrl: 'https://man101jha.github.io/spillo-exim/',
-    githubUrl: 'https://github.com/man101jha/spillo-exim',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Client Project'],
-    category: 'Client',
-  },
-];
+import { usePortfolio } from '../services/portfolioService';
+import { useSearchParams } from 'react-router-dom';
 
 const statusColors = {
   active: { bg: '#d1fae5', text: '#065f46' },
@@ -114,15 +9,16 @@ const statusColors = {
   archived: { bg: '#f3f4f6', text: '#6b7280' },
 };
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, getProjectImage }) {
   const status = statusColors[project.status] || statusColors.active;
+  const imageSrc = getProjectImage(project.image);
 
   return (
     <div className="project-card">
       {/* Image / placeholder */}
       <div className="project-image">
-        {project.image ? (
-          <img src={project.image} alt={project.title} className="project-img-src" />
+        {imageSrc ? (
+          <img src={imageSrc} alt={project.title} className="project-img-src" />
         ) : (
           <div className="project-image-placeholder">
             <span>{project.title[0]}</span>
@@ -174,7 +70,7 @@ function ProjectCard({ project }) {
 
         {/* Tags */}
         <div className="project-tags">
-          {project.tags.map(tag => (
+          {project.tags && project.tags.map(tag => (
             <span key={tag} className="tag">{tag}</span>
           ))}
         </div>
@@ -183,14 +79,74 @@ function ProjectCard({ project }) {
   );
 }
 
-export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState('All');
-  
-  const categories = ['All', 'AI & Personal', 'Work', 'Client'];
+function CertificationCard({ cert }) {
+  return (
+    <div className="project-card certification-card">
+      {/* Image / placeholder */}
+      <div className="project-image">
+        {cert.image ? (
+          <img src={cert.image} alt={cert.title} className="project-img-src" />
+        ) : (
+          <div className="project-image-placeholder">
+            <span>🎓</span>
+          </div>
+        )}
+      </div>
 
+      <div className="project-body">
+        <div className="project-header">
+          <div>
+            <h2 className="project-title">{cert.title}</h2>
+            <p className="project-subtitle">{cert.issuer} · {cert.issueDate}</p>
+          </div>
+        </div>
+
+        {cert.credentialId && (
+          <p className="project-desc" style={{ marginTop: '8px', fontSize: '13px' }}>
+            Credential ID: <code style={{ background: 'var(--bg-sidebar)', padding: '2px 6px', borderRadius: '4px' }}>{cert.credentialId}</code>
+          </p>
+        )}
+
+        {/* Actions */}
+        <div className="project-actions" style={{ marginTop: '16px' }}>
+          {cert.credentialUrl && (
+            <a
+              href={cert.credentialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn project-btn--primary"
+            >
+              Verify Credential
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Projects() {
+  const { projects, certifications, getProjectImage } = usePortfolio();
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  const activeCategory = searchParams.get('tab') || 'All';
+  
+  const setActiveCategory = (cat) => {
+    if (cat === 'All') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ tab: cat });
+    }
+  };
+  
+  const categories = ['All', 'AI & Personal', 'Work', 'Client', 'Certifications'];
+
+  // Filter projects/certifications based on active category tab
+  const showCertifications = activeCategory === 'Certifications';
+  
   const filteredProjects = activeCategory === 'All' 
-    ? allProjects 
-    : allProjects.filter(p => p.category === activeCategory);
+    ? projects 
+    : projects.filter(p => p.category === activeCategory);
 
   return (
     <div className="page-content projects">
@@ -212,9 +168,15 @@ export default function Projects() {
 
       {/* Grid */}
       <div className="projects-grid">
-        {filteredProjects.map(project => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        {showCertifications ? (
+          certifications.map(cert => (
+            <CertificationCard key={cert.id} cert={cert} />
+          ))
+        ) : (
+          filteredProjects.map(project => (
+            <ProjectCard key={project.id} project={project} getProjectImage={getProjectImage} />
+          ))
+        )}
       </div>
     </div>
   );

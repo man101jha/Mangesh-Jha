@@ -1,17 +1,29 @@
 import React from 'react';
 import './Home.css';
+import { usePortfolio } from '../services/portfolioService';
 
 export default function Home() {
+  const { profile, home } = usePortfolio();
+
+  const name = profile?.name || 'Mangesh Jha';
+  const heroSubtitle = home?.heroSubtitle || 'AI Engineer · Full-Stack · LLM Applications';
+  const linkedinUrl = profile?.linkedin || 'https://www.linkedin.com/in/mangesh-jha';
+  const emailUrl = profile?.email ? `mailto:${profile.email}` : 'mailto:mangesh105jha@gmail.com';
+  const resumeUrl = profile?.resumeUrl || 'https://drive.google.com/file/d/1ZmcuSrLxSECxkuEhjipMEn4Eu4eFZKa1/view?usp=sharing';
+
+  const bioMain = home?.bioMain || "I build and ship AI-powered products...";
+  const bioSub = home?.bioSub || "This is where I document shipped AI products...";
+
   return (
     <div className="page-content home">
       {/* ── Hero ─────────────────────────────────── */}
       <section className="hero">
         <h1 className="hero-heading">
-          <span className="hero-heading-box">Hey, I'm Mangesh Jha</span>
+          <span className="hero-heading-box">Hey, I'm {name}</span>
         </h1>
 
         <p className="hero-role">
-          AI Engineer · Full-Stack · LLM Applications
+          {heroSubtitle}
           <span className="role-arrow">▶</span>
         </p>
 
@@ -23,7 +35,7 @@ export default function Home() {
             <span className="x-card-secondary">Professional network & updates</span>
           </div>
           <a
-            href="https://www.linkedin.com/in/mangesh-jha"
+            href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="x-follow-btn"
@@ -35,57 +47,16 @@ export default function Home() {
 
       {/* ── Bio ──────────────────────────────────── */}
       <section className="bio">
-        <p className="bio-main">
-          I build and ship AI-powered products — from agentic RAG pipelines to multi-agent orchestration systems. At{' '}
-          <a
-            href="https://yotta.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bio-link"
-          >
-            Yotta Infrastructures
-          </a>
-          , I've delivered enterprise-scale platforms used by thousands. My AI work:{' '}
-          <a
-            href="https://nyaya-pro-assistant.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bio-link"
-          >
-            Nyaya-Pro
-          </a>{' '}
-          (legal RAG assistant with semantic re-ranking and zero-hallucination design),{' '}
-          <a
-            href="https://jobpilot-ai-rho.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bio-link"
-          >
-            JobPilot AI
-          </a>{' '}
-          (CrewAI multi-agent pipeline), and{' '}
-          <a
-            href="https://examgenie-ai.vercel.app/upload"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bio-link"
-          >
-            ExamGenie AI
-          </a>{' '}
-          — all deployed and live.
-        </p>
-
-        <p className="bio-sub">
-          This is where I document shipped AI products, engineering decisions, and what I'm building next.
-        </p>
+        <p className="bio-main" dangerouslySetInnerHTML={{ __html: bioMain }} />
+        <p className="bio-sub" dangerouslySetInnerHTML={{ __html: bioSub }} />
       </section>
 
       {/* ── Contact + Email buttons ──────────────── */}
       <div className="cta-row">
         <a href="/contact" className="cta-btn cta-btn--primary">Contact</a>
-        <a href="mailto:mangesh105jha@gmail.com" className="cta-btn cta-btn--outline">✉ E-Mail</a>
+        <a href={emailUrl} className="cta-btn cta-btn--outline">✉ E-Mail</a>
         <a 
-          href="https://drive.google.com/file/d/1ZmcuSrLxSECxkuEhjipMEn4Eu4eFZKa1/view?usp=sharing" 
+          href={resumeUrl} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="cta-btn cta-btn--outline"
@@ -93,8 +64,6 @@ export default function Home() {
           ↓ Resume
         </a>
       </div>
-
-
 
       {/* ── Reach Out ────────────────────────────── */}
       <div className="reach-out">
