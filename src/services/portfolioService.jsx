@@ -33,7 +33,7 @@ export function PortfolioDataProvider({ children }) {
     }
 
     setLoading(true);
-    fetch(LIVE_DATA_URL)
+    fetch(`${LIVE_DATA_URL}?t=${new Date().getTime()}`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         return res.json();
